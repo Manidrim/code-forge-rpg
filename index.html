@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manu // Code Forge RPG</title>
+<meta name="description" content="RPG-style developer dashboard tracking skills, quests, and XP.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-group">
+      <svg class="logo-svg" viewBox="0 0 40 40" width="36" height="36" aria-label="Code Forge Logo">
+        <rect x="2" y="2" width="36" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 14l-4 6 4 6" fill="none" stroke="var(--color-ember)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M28 14l4 6-4 6" fill="none" stroke="var(--color-ember)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="11" x2="18" y2="29" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="2" fill="var(--color-ember)"/>
+      </svg>
+      <span class="logo-text">CODE FORGE</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#quests" class="nav-link">Quests</a>
+      <a href="#commits" class="nav-link">Commits</a>
+      <a href="#badges" class="nav-link">Badges</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="./assets/hero-bg.png" alt="" loading="eager">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-class">LEVEL 42 — BACKEND SORCERER</p>
+    <h1 class="hero-title">MANU</h1>
+    <p class="hero-subtitle">Forgeron du Code &middot; Saint-Dolay, Bretagne</p>
+    <div class="hero-xp-wrapper">
+      <div class="hero-xp-bar">
+        <div class="hero-xp-fill" data-xp="73"></div>
+      </div>
+      <span class="hero-xp-label">7,340 / 10,000 XP</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="stat-val">16</span><span class="stat-label">Repos</span></div>
+      <div class="stat-pill"><span class="stat-val">10+</span><span class="stat-label">Langages</span></div>
+      <div class="stat-pill"><span class="stat-val">6</span><span class="stat-label">Ans XP Pro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILL TREES ===== -->
+<section id="skills" class="section">
+  <h2 class="section-title"><span class="rune">&#9876;</span> Arbres de Compétences</h2>
+  <div class="skill-grid">
+
+    <!-- Rust -->
+    <div class="skill-card" data-skill="rust">
+      <div class="skill-header">
+        <div class="skill-icon rust-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 22V10h4c3 0 5 1.5 5 4s-2 4-5 4h-4m9 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3 class="skill-name">Rust</h3>
+          <span class="skill-rank">Apprenti Forgeron</span>
+        </div>
+      </div>
+      <div class="skill-xp-bar"><div class="skill-xp-fill" data-xp="35"></div></div>
+      <span class="skill-xp-text">Niv. 7 — 3,500 / 10,000 XP</span>
+      <ul class="skill-tree" role="list">
+        <li class="tree-node completed">Variables &amp; Ownership</li>
+        <li class="tree-node completed">Structs &amp; Enums</li>
+        <li class="tree-node completed">Pattern Matching</li>
+        <li class="tree-node active">Traits &amp; Generics</li>
+        <li class="tree-node locked">Lifetimes</li>
+        <li class="tree-node locked">Async / Tokio</li>
+        <li class="tree-node locked">CLI Tools (clap)</li>
+      </ul>
+      <div class="skill-commits">
+        <h4>Derniers commits</h4>
+        <div class="commit-entry"><span class="commit-hash">f50c37f</span> test function get struct</div>
+        <div class="commit-entry"><span class="commit-hash">e696e74</span> add guess game</div>
+        <div class="commit-entry"><span class="commit-hash">6e1dec0</span> add options to choose</div>
+      </div>
+    </div>
+
+    <!-- Symfony -->
+    <div class="skill-card" data-skill="symfony">
+      <div class="skill-header">
+        <div class="skill-icon symfony-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="16" y="21" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">S</text></svg>
+        </div>
+        <div>
+          <h3 class="skill-name">Symfony</h3>
+          <span class="skill-rank">Maître Artisan</span>
+        </div>
+      </div>
+      <div class="skill-xp-bar"><div class="skill-xp-fill" data-xp="78"></div></div>
+      <span class="skill-xp-text">Niv. 38 — 7,800 / 10,000 XP</span>
+      <ul class="skill-tree" role="list">
+        <li class="tree-node completed">Routing &amp; Controllers</li>
+        <li class="tree-node completed">Twig Templates</li>
+        <li class="tree-node completed">Doctrine ORM</li>
+        <li class="tree-node completed">Services &amp; DI</li>
+        <li class="tree-node completed">Security &amp; Auth</li>
+        <li class="tree-node active">Certif. Advanced</li>
+        <li class="tree-node locked">Messenger + Async</li>
+      </ul>
+      <div class="skill-commits">
+        <h4>Derniers commits</h4>
+        <div class="commit-entry"><span class="commit-hash">8abc357</span> add make stop</div>
+        <div class="commit-entry"><span class="commit-hash">69757f6</span> tsx test</div>
+        <div class="commit-entry"><span class="commit-hash">af16275</span> update make symfony</div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="skill-card" data-skill="english">
+      <div class="skill-header">
+        <div class="skill-icon english-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="16" y="21" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">EN</text></svg>
+        </div>
+        <div>
+          <h3 class="skill-name">Anglais</h3>
+          <span class="skill-rank">Érudit Voyageur</span>
+        </div>
+      </div>
+      <div class="skill-xp-bar"><div class="skill-xp-fill" data-xp="45"></div></div>
+      <span class="skill-xp-text">Niv. 12 — 4,500 / 10,000 XP</span>
+      <ul class="skill-tree" role="list">
+        <li class="tree-node completed">Basic Conversation</li>
+        <li class="tree-node completed">Tech Vocabulary</li>
+        <li class="tree-node active">Reading Docs</li>
+        <li class="tree-node active">Symfony/PHP Docs</li>
+        <li class="tree-node locked">Writing Articles</li>
+        <li class="tree-node locked">Conference Talks</li>
+      </ul>
+    </div>
+
+    <!-- TypeScript / Full Stack -->
+    <div class="skill-card" data-skill="typescript">
+      <div class="skill-header">
+        <div class="skill-icon ts-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28"><rect x="2" y="2" width="28" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="16" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">TS</text></svg>
+        </div>
+        <div>
+          <h3 class="skill-name">TypeScript</h3>
+          <span class="skill-rank">Guerrier Full-Stack</span>
+        </div>
+      </div>
+      <div class="skill-xp-bar"><div class="skill-xp-fill" data-xp="60"></div></div>
+      <span class="skill-xp-text">Niv. 25 — 6,000 / 10,000 XP</span>
+      <ul class="skill-tree" role="list">
+        <li class="tree-node completed">Next.js &amp; React</li>
+        <li class="tree-node completed">Prisma ORM</li>
+        <li class="tree-node completed">API Routes</li>
+        <li class="tree-node active">Auth &amp; Security</li>
+        <li class="tree-node locked">Microservices</li>
+      </ul>
+      <div class="skill-commits">
+        <h4>Derniers commits</h4>
+        <div class="commit-entry"><span class="commit-hash">06fe395</span> security fixes</div>
+        <div class="commit-entry"><span class="commit-hash">f6c1a8d</span> fix userEmail error</div>
+        <div class="commit-entry"><span class="commit-hash">3fe73cf</span> fix 404 /api/posts</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== WEEKLY QUESTS ===== -->
+<section id="quests" class="section section-alt">
+  <h2 class="section-title"><span class="rune">&#9884;</span> Quêtes Hebdo</h2>
+  <p class="section-subtitle">Semaine du 10 mars 2026</p>
+  <div class="quest-grid">
+
+    <div class="quest-card quest-active">
+      <div class="quest-difficulty epic">ÉPIQUE</div>
+      <h3 class="quest-name">La Forge de Rust</h3>
+      <p class="quest-desc">Implémenter le Parser AST pour le langage "FrenchLang" en Rust</p>
+      <div class="quest-reward">
+        <span class="reward-xp">+500 XP Rust</span>
+        <span class="reward-badge">Badge: Forgeur d'AST</span>
+      </div>
+      <div class="quest-progress">
+        <div class="quest-bar"><div class="quest-fill" style="width:60%"></div></div>
+        <span>3 / 5 étapes</span>
+      </div>
+    </div>
+
+    <div class="quest-card quest-active">
+      <div class="quest-difficulty rare">RARE</div>
+      <h3 class="quest-name">Certification Symfony</h3>
+      <p class="quest-desc">Compléter 3 chapitres du guide de préparation Advanced</p>
+      <div class="quest-reward">
+        <span class="reward-xp">+300 XP Symfony</span>
+      </div>
+      <div class="quest-progress">
+        <div class="quest-bar"><div class="quest-fill" style="width:33%"></div></div>
+        <span>1 / 3 chapitres</span>
+      </div>
+    </div>
+
+    <div class="quest-card quest-active">
+      <div class="quest-difficulty common">COMMUNE</div>
+      <h3 class="quest-name">Lecture Technique EN</h3>
+      <p class="quest-desc">Lire 5 articles de doc Symfony/PHP en anglais sans traducteur</p>
+      <div class="quest-reward">
+        <span class="reward-xp">+200 XP Anglais</span>
+      </div>
+      <div class="quest-progress">
+        <div class="quest-bar"><div class="quest-fill" style="width:40%"></div></div>
+        <span>2 / 5 articles</span>
+      </div>
+    </div>
+
+    <div class="quest-card quest-active">
+      <div class="quest-difficulty rare">RARE</div>
+      <h3 class="quest-name">Sécurité du Blog</h3>
+      <p class="quest-desc">Auditer et fixer les failles de sécurité du blog Next.js</p>
+      <div class="quest-reward">
+        <span class="reward-xp">+350 XP TypeScript</span>
+        <span class="reward-badge">Badge: Gardien du Code</span>
+      </div>
+      <div class="quest-progress">
+        <div class="quest-bar"><div class="quest-fill" style="width:80%"></div></div>
+        <span>4 / 5 fixes</span>
+      </div>
+    </div>
+
+    <div class="quest-card quest-completed">
+      <div class="quest-difficulty common">COMPLÉTÉE</div>
+      <h3 class="quest-name">GitLab CI Fix</h3>
+      <p class="quest-desc">Corriger le GIT_DEPTH du pipeline de déploiement</p>
+      <div class="quest-reward">
+        <span class="reward-xp">+150 XP DevOps</span>
+      </div>
+      <div class="quest-progress">
+        <div class="quest-bar"><div class="quest-fill" style="width:100%"></div></div>
+        <span>Terminée &#10003;</span>
+      </div>
+    </div>
+
+    <div class="quest-card quest-locked">
+      <div class="quest-difficulty legendary">LÉGENDAIRE</div>
+      <h3 class="quest-name">Le Compilateur Final</h3>
+      <p class="quest-desc">Construire l'interpréteur complet de FrenchLang avec exécution</p>
+      <div class="quest-reward">
+        <span class="reward-xp">+1000 XP Rust</span>
+        <span class="reward-badge">Badge: Créateur de Langage</span>
+      </div>
+      <div class="quest-progress">
+        <div class="quest-bar"><div class="quest-fill" style="width:0%"></div></div>
+        <span>Verrouillée — Finir "La Forge de Rust"</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== COMMIT LOG ===== -->
+<section id="commits" class="section">
+  <h2 class="section-title"><span class="rune">&#9881;</span> Journal de Bataille</h2>
+  <p class="section-subtitle">Dernière activité GitHub</p>
+  <div class="commit-log">
+    <div class="commit-row">
+      <span class="commit-date">22 Jan 2026</span>
+      <span class="commit-hash">06fe395</span>
+      <span class="commit-repo">blog_via_comet</span>
+      <span class="commit-msg">feat: Implement comprehensive security fixes</span>
+      <span class="commit-xp">+50 XP</span>
+    </div>
+    <div class="commit-row">
+      <span class="commit-date">22 Jan 2026</span>
+      <span class="commit-hash">f6c1a8d</span>
+      <span class="commit-repo">blog_via_comet</span>
+      <span class="commit-msg">fix: correct userEmail variable error</span>
+      <span class="commit-xp">+30 XP</span>
+    </div>
+    <div class="commit-row">
+      <span class="commit-date">21 Jan 2026</span>
+      <span class="commit-hash">3fe73cf</span>
+      <span class="commit-repo">blog_via_comet</span>
+      <span class="commit-msg">Fix: Correction erreur 404 /api/posts</span>
+      <span class="commit-xp">+30 XP</span>
+    </div>
+    <div class="commit-row">
+      <span class="commit-date">06 Jan 2026</span>
+      <span class="commit-hash">2ba518b</span>
+      <span class="commit-repo">school_project</span>
+      <span class="commit-msg">build(deps): bump actions/checkout</span>
+      <span class="commit-xp">+15 XP</span>
+    </div>
+    <div class="commit-row">
+      <span class="commit-date">30 Mar 2025</span>
+      <span class="commit-hash">f50c37f</span>
+      <span class="commit-repo">MyFirstRust</span>
+      <span class="commit-msg">test function get struct</span>
+      <span class="commit-xp">+40 XP</span>
+    </div>
+    <div class="commit-row">
+      <span class="commit-date">30 Mar 2025</span>
+      <span class="commit-hash">e696e74</span>
+      <span class="commit-repo">MyFirstRust</span>
+      <span class="commit-msg">add guess game</span>
+      <span class="commit-xp">+40 XP</span>
+    </div>
+    <div class="commit-row">
+      <span class="commit-date">14 Mar 2025</span>
+      <span class="commit-hash">8abc357</span>
+      <span class="commit-repo">blog</span>
+      <span class="commit-msg">add make stop</span>
+      <span class="commit-xp">+20 XP</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BADGES ===== -->
+<section id="badges" class="section section-alt">
+  <h2 class="section-title"><span class="rune">&#9733;</span> Badges &amp; Achievements</h2>
+  <div class="badges-grid">
+
+    <div class="badge-card unlocked">
+      <div class="badge-icon">&#9876;</div>
+      <h3>Premier Commit Rust</h3>
+      <p>Publier son premier code Rust sur GitHub</p>
+      <span class="badge-date">Mars 2025</span>
+    </div>
+
+    <div class="badge-card unlocked">
+      <div class="badge-icon">&#9881;</div>
+      <h3>Architecte Docker</h3>
+      <p>Configurer un environnement Docker complet</p>
+      <span class="badge-date">2020</span>
+    </div>
+
+    <div class="badge-card unlocked">
+      <div class="badge-icon">&#128737;</div>
+      <h3>Gardien CI/CD</h3>
+      <p>Fixer un pipeline GitLab en production</p>
+      <span class="badge-date">Nov 2025</span>
+    </div>
+
+    <div class="badge-card unlocked">
+      <div class="badge-icon">&#128214;</div>
+      <h3>Polyglotte</h3>
+      <p>Coder dans 5+ langages en un an</p>
+      <span class="badge-date">2025</span>
+    </div>
+
+    <div class="badge-card unlocked">
+      <div class="badge-icon">&#9889;</div>
+      <h3>Blog Builder</h3>
+      <p>Lancer un blog avec Next.js + Prisma</p>
+      <span class="badge-date">Jan 2026</span>
+    </div>
+
+    <div class="badge-card unlocked">
+      <div class="badge-icon">&#128295;</div>
+      <h3>Security Fixer</h3>
+      <p>Implémenter des fixes de sécurité complets</p>
+      <span class="badge-date">Jan 2026</span>
+    </div>
+
+    <div class="badge-card locked-badge">
+      <div class="badge-icon">&#128142;</div>
+      <h3>Créateur de Langage</h3>
+      <p>Construire un compilateur complet en Rust</p>
+      <span class="badge-date">En cours...</span>
+    </div>
+
+    <div class="badge-card locked-badge">
+      <div class="badge-icon">&#127942;</div>
+      <h3>Symfony Certified</h3>
+      <p>Obtenir la certification Advanced</p>
+      <span class="badge-date">Objectif 2026</span>
+    </div>
+
+    <div class="badge-card locked-badge">
+      <div class="badge-icon">&#127760;</div>
+      <h3>English Speaker</h3>
+      <p>Donner un talk technique en anglais</p>
+      <span class="badge-date">Objectif 2027</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p>Code Forge RPG &middot; Manu &middot; 2026</p>
+  <p class="footer-attr">
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </p>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>

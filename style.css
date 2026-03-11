@@ -1,0 +1,863 @@
+/* ============================
+   CODE FORGE RPG — Dark / Metal Theme
+   ============================ */
+
+:root, [data-theme="dark"] {
+  /* Fonts */
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Type scale */
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.8125rem, 0.77rem + 0.25vw, 0.9375rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-xl:   clamp(1.375rem, 1.1rem + 1vw, 2rem);
+  --text-2xl:  clamp(1.75rem, 1.2rem + 2vw, 3rem);
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Metal/Dark color system */
+  --color-bg:           #0a0a0c;
+  --color-surface:      #111115;
+  --color-surface-2:    #18181d;
+  --color-surface-alt:  #0e0e12;
+  --color-border:       #2a2a32;
+  --color-border-glow:  #3a2a1a;
+  --color-divider:      #1e1e24;
+
+  /* Text */
+  --color-text:         #d4d0ca;
+  --color-text-muted:   #8a877f;
+  --color-text-faint:   #56544e;
+
+  /* Accents — ember/fire */
+  --color-accent:       #c45a1c;
+  --color-accent-hover: #e06a22;
+  --color-accent-glow:  rgba(196, 90, 28, 0.2);
+  --color-ember:        #ff6b2b;
+  --color-ember-dim:    #a04218;
+
+  /* Skill colors */
+  --color-rust:         #de5c16;
+  --color-symfony:      #877bab;
+  --color-english:      #4a9ebb;
+  --color-typescript:   #3178c6;
+
+  /* Quest difficulty */
+  --color-common:       #6b8a6b;
+  --color-rare:         #4a7abf;
+  --color-epic:         #9b59b6;
+  --color-legendary:    #d4a017;
+
+  /* Utility */
+  --color-success:      #5a9a3a;
+  --color-locked:       #3a3a40;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Transitions */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 20px rgba(196, 90, 28, 0.15);
+
+  /* Content width */
+  --content-wide: 1200px;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo-svg { color: var(--color-text); }
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-ember);
+  text-transform: uppercase;
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-ember);
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 12, 0.5) 0%,
+    rgba(10, 10, 12, 0.7) 50%,
+    rgba(10, 10, 12, 0.95) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-16) var(--space-6) var(--space-12);
+}
+
+.hero-class {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.25em;
+  color: var(--color-ember);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+  text-shadow: 0 0 40px rgba(196, 90, 28, 0.3);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.hero-xp-wrapper {
+  max-width: 400px;
+  margin: 0 auto var(--space-8);
+}
+
+.hero-xp-bar {
+  height: 8px;
+  background: var(--color-surface-2);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-2);
+}
+
+.hero-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-ember-dim), var(--color-ember));
+  border-radius: 99px;
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 12px rgba(255, 107, 43, 0.4);
+}
+
+.hero-xp-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.hero-stats {
+  display: flex;
+  gap: var(--space-6);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-6);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.stat-val {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-ember);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: clamp(var(--space-12), 6vw, var(--space-24)) var(--space-6);
+  max-width: var(--content-wide);
+  margin: 0 auto;
+}
+
+.section-alt {
+  max-width: 100%;
+  background: var(--color-surface-alt);
+}
+
+.section-alt > * {
+  max-width: var(--content-wide);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.rune {
+  color: var(--color-ember);
+  font-size: 1.2em;
+}
+
+.section-subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-10);
+}
+
+/* ===== SKILL GRID ===== */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.skill-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive);
+}
+
+.skill-card:hover {
+  border-color: var(--color-border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.skill-card[data-skill="rust"] { border-top: 3px solid var(--color-rust); }
+.skill-card[data-skill="symfony"] { border-top: 3px solid var(--color-symfony); }
+.skill-card[data-skill="english"] { border-top: 3px solid var(--color-english); }
+.skill-card[data-skill="typescript"] { border-top: 3px solid var(--color-typescript); }
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+
+.rust-icon { color: var(--color-rust); }
+.symfony-icon { color: var(--color-symfony); }
+.english-icon { color: var(--color-english); }
+.ts-icon { color: var(--color-typescript); }
+
+.skill-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.skill-rank {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.skill-xp-bar {
+  height: 6px;
+  background: var(--color-surface-2);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--color-border);
+}
+
+.skill-xp-fill {
+  height: 100%;
+  border-radius: 99px;
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card[data-skill="rust"] .skill-xp-fill {
+  background: linear-gradient(90deg, #8a3610, var(--color-rust));
+  box-shadow: 0 0 8px rgba(222, 92, 22, 0.3);
+}
+.skill-card[data-skill="symfony"] .skill-xp-fill {
+  background: linear-gradient(90deg, #4a4268, var(--color-symfony));
+  box-shadow: 0 0 8px rgba(135, 123, 171, 0.3);
+}
+.skill-card[data-skill="english"] .skill-xp-fill {
+  background: linear-gradient(90deg, #2a5a6e, var(--color-english));
+  box-shadow: 0 0 8px rgba(74, 158, 187, 0.3);
+}
+.skill-card[data-skill="typescript"] .skill-xp-fill {
+  background: linear-gradient(90deg, #1a3a5e, var(--color-typescript));
+  box-shadow: 0 0 8px rgba(49, 120, 198, 0.3);
+}
+
+.skill-xp-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+/* Skill tree nodes */
+.skill-tree {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.tree-node {
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  position: relative;
+}
+
+.tree-node::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tree-node.completed {
+  color: var(--color-text);
+}
+
+.tree-node.completed::before {
+  background: var(--color-success);
+  box-shadow: 0 0 6px rgba(90, 154, 58, 0.4);
+}
+
+.tree-node.active {
+  color: var(--color-ember);
+  background: rgba(196, 90, 28, 0.06);
+}
+
+.tree-node.active::before {
+  background: var(--color-ember);
+  box-shadow: 0 0 8px rgba(255, 107, 43, 0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.tree-node.locked {
+  color: var(--color-text-faint);
+}
+
+.tree-node.locked::before {
+  background: var(--color-locked);
+  border: 1px solid var(--color-border);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(255, 107, 43, 0.3); }
+  50% { box-shadow: 0 0 14px rgba(255, 107, 43, 0.6); }
+}
+
+/* Skill card commits */
+.skill-commits {
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-3);
+}
+
+.skill-commits h4 {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.skill-commits .commit-entry {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  padding: var(--space-1) 0;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.skill-commits .commit-hash {
+  color: var(--color-accent);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* ===== QUESTS ===== */
+.quest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.quest-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  position: relative;
+  transition: border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive);
+}
+
+.quest-card:hover {
+  border-color: var(--color-border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.quest-completed {
+  border-color: var(--color-success);
+  opacity: 0.7;
+}
+
+.quest-locked {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+.quest-difficulty {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+}
+
+.quest-difficulty.common {
+  color: var(--color-common);
+  background: rgba(107, 138, 107, 0.12);
+}
+.quest-difficulty.rare {
+  color: var(--color-rare);
+  background: rgba(74, 122, 191, 0.12);
+}
+.quest-difficulty.epic {
+  color: var(--color-epic);
+  background: rgba(155, 89, 182, 0.12);
+}
+.quest-difficulty.legendary {
+  color: var(--color-legendary);
+  background: rgba(212, 160, 23, 0.12);
+}
+
+.quest-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.quest-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.quest-reward {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.reward-xp {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ember);
+  background: rgba(196, 90, 28, 0.1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(196, 90, 28, 0.2);
+}
+
+.reward-badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-legendary);
+  background: rgba(212, 160, 23, 0.1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+}
+
+.quest-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.quest-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--color-surface-2);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.quest-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-ember-dim), var(--color-ember));
+  border-radius: 99px;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quest-completed .quest-fill {
+  background: linear-gradient(90deg, #3a6a2a, var(--color-success));
+}
+
+.quest-progress span {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ===== COMMIT LOG ===== */
+.commit-log {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.commit-row {
+  display: grid;
+  grid-template-columns: 100px 70px 130px 1fr 70px;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-interactive);
+}
+
+.commit-row:hover {
+  border-color: var(--color-border-glow);
+}
+
+.commit-date { color: var(--color-text-faint); }
+
+.commit-hash {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.commit-repo {
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.commit-msg {
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.commit-xp {
+  color: var(--color-ember);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ===== BADGES ===== */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-6);
+}
+
+.badge-card {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive),
+              transform var(--transition-interactive);
+}
+
+.badge-card.unlocked:hover {
+  border-color: var(--color-ember-dim);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.badge-card.locked-badge {
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.badge-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+  line-height: 1;
+}
+
+.badge-card.unlocked .badge-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 107, 43, 0.3));
+}
+
+.badge-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.badge-card p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  max-width: none;
+}
+
+.badge-date {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.footer-attr {
+  margin-top: var(--space-3);
+}
+
+.footer-attr a {
+  color: var(--color-text-faint);
+  text-decoration: none;
+  font-size: var(--text-xs);
+}
+
+.footer-attr a:hover {
+  color: var(--color-text-muted);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+  opacity: 1;
+}
+
+@supports (animation-timeline: scroll()) {
+  .fade-in {
+    opacity: 0;
+    animation: reveal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+@keyframes reveal-fade {
+  to { opacity: 1; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-nav {
+    gap: var(--space-4);
+  }
+
+  .nav-link {
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-stats {
+    gap: var(--space-3);
+  }
+
+  .stat-pill {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .commit-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .commit-row .commit-date,
+  .commit-row .commit-repo {
+    display: none;
+  }
+
+  .quest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 1rem + 3vw, 2.5rem);
+  }
+}
+
+/* ===== PARTICLE EMBER CANVAS ===== */
+#ember-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
