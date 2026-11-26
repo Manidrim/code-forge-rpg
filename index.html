@@ -52,6 +52,9 @@
       <a href="#commits" class="nav-link">Commits</a>
       <a href="#badges" class="nav-link">Badges</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Basculer le th&egrave;me clair/sombre" title="Th&egrave;me clair/sombre">
+      <span class="theme-toggle-icon" id="theme-toggle-icon">&#9789;</span>
+    </button>
   </div>
 </header>
 
@@ -202,7 +205,13 @@
 <section id="quests" class="section section-alt">
   <h2 class="section-title"><span class="rune">&#9884;</span> Quêtes Hebdo</h2>
   <p class="section-subtitle">Semaine du 10 mars 2026</p>
-  <div class="quest-grid">
+  <div class="quest-filters" role="group" aria-label="Filtrer les qu&ecirc;tes">
+    <button class="quest-filter active" data-filter="all" type="button">Toutes</button>
+    <button class="quest-filter" data-filter="active" type="button">Actives</button>
+    <button class="quest-filter" data-filter="completed" type="button">Compl&eacute;t&eacute;es</button>
+    <button class="quest-filter" data-filter="locked" type="button">Verrouill&eacute;es</button>
+  </div>
+  <div class="quest-grid" id="quest-grid">
 
     <div class="quest-card quest-active">
       <div class="quest-difficulty epic">ÉPIQUE</div>
@@ -423,6 +432,8 @@
     <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
   </p>
 </footer>
+
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut de page" title="Retour en haut">&#9650;</button>
 
 <script src="./app.js"></script>
 </body>

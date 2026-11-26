@@ -147,6 +147,55 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   animateParticles();
 
+  // === THEME TOGGLE (clair/sombre) ===
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-toggle-icon');
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    if (themeIcon) themeIcon.textContent = theme === 'dark' ? '\u2609' : '\u2600';
+  }
+
+  const savedTheme = localStorage.getItem('forge-theme');
+  applyTheme(savedTheme || 'dark');
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('forge-theme', next);
+      applyTheme(next);
+    });
+  }
+
+  // === QUEST FILTERS ===
+  const filterButtons = document.querySelectorAll('.quest-filter');
+  const questCards = document.querySelectorAll('#quest-grid .quest-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      questCards.forEach(card => {
+        const match = filter === 'all' || card.classList.contains('quest-' + filter);
+        card.classList.toggle('hidden', !match);
+      });
+    });
+  });
+
+  // === BACK TO TOP ===
+  const backToTop = document.getElementById('back-to-top');
+
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // === SKILL CARD TILT (subtle) ===
   document.querySelectorAll('.skill-card, .quest-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
